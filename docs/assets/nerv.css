@@ -59,16 +59,22 @@
   transition: border-color .15s ease, transform .15s ease;
 }
 .nerv-card:hover { border-color: var(--nerv-crimson-bright); transform: translateY(-2px); }
-.nerv-card img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid var(--nerv-crimson); }
-.nerv-card .role { font-size: .72rem; opacity: .75; display: block; }
+/* 마크다운이 카드 내용을 하나의 <p>로 합치므로 세로 스택을 명시적으로 강제 */
+.nerv-card p { margin: .25rem 0; line-height: 1.5; }
+.nerv-card p > a:first-child { display: block; }            /* 아바타 링크 = 자기 줄 */
+.nerv-card img { display: block; margin: 0 auto .55rem; width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid var(--nerv-crimson); }
+.nerv-card strong { display: block; }                        /* 이름 = 자기 줄 */
+.nerv-card .role { font-size: .72rem; opacity: .75; display: block; margin-top: .1rem; }
 
 /* 캐릭터 페이지 헤더 (아바타 + 포토카드 나란히) */
-.nerv-char-head { display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: flex-start; margin: 1rem 0; }
+/* 마크다운이 두 이미지를 <p>로 감싸므로 실제 flex 컨테이너는 내부 <p> */
+.nerv-char-head { margin: 1rem 0; }
+.nerv-char-head p { display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: flex-start; margin: 0; }
 .nerv-char-head img.avatar { width: 160px; height: 160px; border-radius: 12px; object-fit: cover; border: 2px solid var(--nerv-crimson); }
 .nerv-char-head img.card { width: 200px; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,.45); }
 
 /* 모델 배지 */
-.badge { display: inline-block; padding: .08rem .5rem; border-radius: 999px; font-size: .72rem; font-weight: 600; line-height: 1.5; }
+.badge { display: inline-block; padding: .05rem .5rem; border-radius: 999px; font-size: .72rem; font-weight: 600; line-height: 1.3; vertical-align: middle; }
 .badge.opus   { background: rgba(196,22,28,.18);  color: var(--nerv-crimson-bright); border: 1px solid var(--nerv-crimson); }
 .badge.sonnet { background: rgba(255,138,0,.15);   color: var(--nerv-amber);  border: 1px solid var(--nerv-amber); }
 .badge.haiku  { background: rgba(0,214,143,.15);   color: var(--nerv-green);  border: 1px solid var(--nerv-green); }
