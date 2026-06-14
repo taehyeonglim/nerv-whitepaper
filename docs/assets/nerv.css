@@ -233,3 +233,31 @@ body.nerv-mm-open { overflow: hidden; }
 .nerv-arch-agents { display: flex; gap: 0.55rem; justify-content: center; flex-wrap: wrap; margin-top: 0.2rem; }
 .nerv-arch-agent { width: 118px; font-size: 0.62rem; text-align: center; padding: 0.4rem 0.3rem; border: 1px solid rgba(196, 22, 28, 0.4); border-radius: 8px; background: rgba(255,255,255,0.02); line-height: 1.25; }
 @media (max-width: 640px) { .nerv-arch-agent { width: 30%; min-width: 92px; } }
+
+/* ───────────────────────────────────────────────
+   시스템 평가 스코어카드 (.nerv-eval-*)
+   ─────────────────────────────────────────────── */
+.nerv-eval {
+  background: radial-gradient(130% 100% at 50% 0%, #16161f 0%, #0b0b10 72%);
+  border: 1px solid rgba(196, 22, 28, 0.5); border-radius: 16px;
+  padding: 1.8rem 1.4rem 2rem; margin: 1.4rem 0; color: #ebebf2;
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.4), inset 0 0 70px rgba(196, 22, 28, 0.06);
+}
+.nerv-eval-hero { text-align: center; margin-bottom: 1.6rem; }
+.nerv-eval-score { font-size: 3.6rem; font-weight: 800; line-height: 1; color: var(--nerv-crimson-bright); letter-spacing: -0.02em; }
+.nerv-eval-score small { font-size: 1.2rem; opacity: 0.55; font-weight: 600; }
+.nerv-eval-grade { display: inline-block; margin-top: 0.5rem; padding: 0.15rem 0.9rem; border-radius: 999px; font-size: 1.1rem; font-weight: 800; border: 1px solid var(--nerv-crimson); color: var(--nerv-crimson-bright); background: rgba(196, 22, 28, 0.12); }
+.nerv-eval-label { display: block; margin-top: 0.55rem; font-size: 0.8rem; opacity: 0.68; }
+.nerv-eval-rows { display: flex; flex-direction: column; gap: 0.6rem; max-width: 780px; margin: 0 auto; }
+.nerv-eval-row { display: grid; grid-template-columns: 215px 1fr 46px; align-items: center; gap: 0.8rem; }
+.nerv-eval-dim { font-size: 0.82rem; font-weight: 600; line-height: 1.25; }
+.nerv-eval-dim small { display: block; font-weight: 400; font-size: 0.66rem; opacity: 0.55; }
+.nerv-eval-track { height: 15px; background: rgba(255, 255, 255, 0.06); border-radius: 999px; overflow: hidden; border: 1px solid rgba(196, 22, 28, 0.28); }
+.nerv-eval-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, rgba(196, 22, 28, 0.7), var(--nerv-crimson-bright)); }
+.nerv-eval-fill.hi { background: linear-gradient(90deg, rgba(0, 214, 143, 0.5), var(--nerv-green)); }
+.nerv-eval-fill.lo { background: linear-gradient(90deg, rgba(255, 138, 0, 0.45), var(--nerv-amber)); }
+.nerv-eval-num { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; font-size: 0.92rem; }
+@media (max-width: 620px) {
+  .nerv-eval-row { grid-template-columns: 1fr 40px; }
+  .nerv-eval-row .nerv-eval-dim { grid-column: 1 / -1; }
+}

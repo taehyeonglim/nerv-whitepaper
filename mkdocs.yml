@@ -67,10 +67,10 @@ markdown_extensions:
       permalink: true
 
 extra_css:
-  - assets/nerv.css?v=8
+  - assets/nerv.css?v=9
 
 extra_javascript:
-  - assets/diagram-zoom.js?v=8
+  - assets/diagram-zoom.js?v=9
 
 extra:
   social:
@@ -144,4 +144,5 @@ nav:
       - 품질 게이트: 06-systems/quality-gates.md
       - launchd 운영 (42 잡): 06-systems/launchd.md
   - 7 · 모델 전략: 07-model-strategy.md
-  - 8 · 부록: 08-appendix.md
+  - 8 · 시스템 평가: 08-evaluation.md
+  - 9 · 부록: 09-appendix.md
