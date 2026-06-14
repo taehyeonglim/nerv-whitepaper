@@ -15,19 +15,29 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[논문 파일 경로 입력] --> B[한계 향후연구 결론 섹션 추출]
-  B --> C[유사 한계점 그룹화]
-  C --> D{Codex gpt-5.5 위임}
-  D -->|위임| E[6유형 갭 분류와 우선순위 매트릭스]
-  D -->|Claude 잔류| F[갭 후보 본문 인용 추출]
-  E --> G[연구 방향 도출]
-  F --> G
-  G --> H[사분면 차트 시각화]
-  H --> I[갭 분석 리포트 산출]
-  I --> J[마리와 리츠코 소비]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">논문 파일 경로 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">한계 향후연구 결론 섹션 추출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">유사 한계점 그룹화</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">6유형 갭 분류와 우선순위 매트릭스</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">갭 후보 본문 인용 추출</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">연구 방향 도출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">사분면 차트 시각화</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">갭 분석 리포트 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">마리와 리츠코 소비</div>
+</div>
 
 ## 입·출력
 

@@ -15,18 +15,27 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[심사 코멘트 입력] --> B[코멘트 인테이크 분류]
-  B --> C[교차 수렴 분석]
-  C --> D[사실 검증 하드 게이트]
-  D --> E[대응 매트릭스]
-  E --> F[수정 앵커 명세]
-  F --> G[Rebuttal 작성]
-  G --> H[수정 후 재검증]
-  H --> I[재투고 체크리스트]
-  I --> J[PI 및 후속 역할로 전달]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">심사 코멘트 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">코멘트 인테이크 분류</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">교차 수렴 분석</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">사실 검증 하드 게이트</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">대응 매트릭스</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">수정 앵커 명세</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Rebuttal 작성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">수정 후 재검증</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">재투고 체크리스트</div>
+  <div class="nerv-flow-arr">↓<span>전달</span></div>
+  <div class="nerv-flow-node out">PI 및 후속 역할로 전달</div>
+</div>
 
 ## 입·출력
 

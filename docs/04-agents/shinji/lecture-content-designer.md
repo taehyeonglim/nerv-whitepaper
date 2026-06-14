@@ -15,17 +15,25 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[강의 주제 입력과 유형 지정] --> B[서브에이전트 병렬 자료 수집]
-  B --> C[핵심 개념 추출과 관계 맵 구성]
-  C --> D[학습 목표 설계]
-  D --> E[강의 구성안 설계와 타이밍 검증]
-  E --> F[섹션별 콘텐츠 위임]
-  F --> G[시각 자료 계획 수립]
-  G --> H[강의 콘텐츠 산출]
-  H --> I[소비 PI와 마리 레이 리츠코]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">강의 주제 입력과 유형 지정</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">서브에이전트 병렬 자료 수집</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">핵심 개념 추출과 관계 맵 구성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">학습 목표 설계</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">강의 구성안 설계와 타이밍 검증</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">섹션별 콘텐츠 위임</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">시각 자료 계획 수립</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">강의 콘텐츠 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">PI · 마리 · 레이 · 리츠코</div>
+</div>
 
 ## 입·출력
 

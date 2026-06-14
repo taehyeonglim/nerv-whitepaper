@@ -15,17 +15,25 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[강의 주제와 키워드 입력] --> B[입력 파라미터 검증]
-  B --> C[검색 전략 수립]
-  C --> D[웹 검색 1차 수행]
-  D --> E[본문 내용 2차 수집]
-  E --> F[관련성 신뢰도 최신성 점수화]
-  F --> G[종합 점수 정렬과 관련성 게이트]
-  G --> H[소스 유형별 구조화 Markdown 출력]
-  H --> I[신지 강의 설계 단계 소비]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">강의 주제와 키워드 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">입력 파라미터 검증</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">검색 전략 수립</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">웹 검색 1차 수행</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">본문 내용 2차 수집</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">관련성 신뢰도 최신성 점수화</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">종합 점수 정렬과 관련성 게이트</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">소스 유형별 구조화 Markdown 출력</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">신지 강의 설계 단계 소비</div>
+</div>
 
 ## 입·출력
 

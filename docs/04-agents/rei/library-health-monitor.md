@@ -15,16 +15,23 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[검사 결과 입력] --> B[정합성 항목 분류]
-  B --> C[위험도 판단]
-  C --> D[트렌드 비교]
-  D --> E[종합 리포트 작성]
-  E --> F[리스크 등록부 생성]
-  F --> G[복구 스크립트 초안]
-  G --> H[지식 관리 역할로 전달]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">검사 결과 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">정합성 항목 분류</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">위험도 판단</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">트렌드 비교</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">종합 리포트 작성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">리스크 등록부 생성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">복구 스크립트 초안</div>
+  <div class="nerv-flow-arr">↓<span>전달</span></div>
+  <div class="nerv-flow-node out">지식 관리 역할로 전달</div>
+</div>
 
 ## 입·출력
 

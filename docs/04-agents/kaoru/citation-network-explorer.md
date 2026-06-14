@@ -15,20 +15,31 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[시드 논문 입력] --> B[학술 API 인용 데이터 수집]
-  B --> C[네트워크 그래프 빌드]
-  C --> D[중심성 지표 계산]
-  D --> E[클러스터링 + 핵심 논문 선정]
-  E --> F[JSON 결과 직렬화]
-  F --> G{종합 단계 위임}
-  G -->|Codex gpt-5.5| H[자연어 보고서 종합]
-  G -->|Sonnet 본 에이전트| I[할루시네이션 검증]
-  H --> J[Markdown 보고서 산출]
-  I --> J
-  J --> K[소비 역할 전달]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">시드 논문 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">학술 API 인용 데이터 수집</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">네트워크 그래프 빌드</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">중심성 지표 계산</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">클러스터링 · 핵심 논문 선정</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">JSON 결과 직렬화</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">자연어 보고서 종합</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Sonnet 잔류</span><div class="nerv-flow-node">할루시네이션 검증</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">Markdown 보고서 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">소비 역할 전달</div>
+</div>
 
 ## 입·출력
 

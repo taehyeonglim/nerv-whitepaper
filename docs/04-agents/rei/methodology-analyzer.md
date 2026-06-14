@@ -15,18 +15,29 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[논문 파일 경로 입력] --> B[메서드 섹션 텍스트 추출]
-  B --> C[5개 프레임워크 항목 정리]
-  C --> D[Codex 사전 점검]
-  D --> E[Codex gpt-5.5 위임 프레임워크 분석과 비교 매트릭스 종합]
-  D --> F[파일 IO와 인용 검증은 Claude 잔류]
-  E --> G[재현성 점수 산출]
-  F --> G
-  G --> H[방법론 분석 문서 출력]
-  H --> I[소비 역할 마리와 PI]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">논문 파일 경로 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">메서드 섹션 텍스트 추출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">5개 프레임워크 항목 정리</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Codex 사전 점검</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">프레임워크 분석과 비교 매트릭스 종합</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">파일 IO와 인용 검증</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">재현성 점수 산출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">방법론 분석 문서 출력</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">소비 역할 마리와 PI</div>
+</div>
 
 ## 입·출력
 

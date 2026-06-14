@@ -13,15 +13,21 @@
 매일 활성 연구 프로젝트의 맥락을 분석하여, 후보 논문 중 가장 가치 있는 1편을 선택하고 추천 이유를 생성합니다. Python 백엔드가 수집·점수화한 상위 후보 논문과 활성 프로젝트 프로파일을 입력받아, 최종 1편을 골라 추천 내러티브를 만듭니다. 연구 갭 해소, 새로운 방법론·관점, 즉시 활용 가능성, 교차 프로젝트 인사이트를 선택 기준으로 삼고, 최근 추천 이력과 겹치는 주제는 회피합니다. 후보 메타데이터는 임의로 수정하지 않으며, 모든 후보의 관련성이 낮은 날에는 추천을 비워 두는 정책을 따릅니다.
 
 ## 작동 방식
-```mermaid
-flowchart TD
-  A[일일 트리거 입력] --> B[후보 논문 메타데이터 분석]
-  B --> C[활성 프로젝트 연구 갭 대조]
-  C --> D[최근 추천 이력 중복 확인]
-  D --> E[최적 1편 선택과 추천 내러티브 생성]
-  E --> F[추천 결과 산출]
-  F --> G[레이 마리 아스카 신지 소비]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">일일 트리거 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">후보 논문 메타데이터 분석</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">활성 프로젝트 연구 갭 대조</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">최근 추천 이력 중복 확인</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">최적 1편 선택과 추천 내러티브 생성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">추천 결과 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">레이 · 마리 · 아스카 · 신지 소비</div>
+</div>
 
 ## 입·출력
 - **입력**: 상위 후보 논문 목록(제목·저자·초록·점수·최적합 프로젝트), 활성 프로젝트 프로파일(키워드·연구 갭), 선택적으로 최근 추천 이력

@@ -15,16 +15,23 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[연구 아이디어 토론 요청] --> B[토론 모드 선택]
-  B --> C[소크라테스식 질문 토론]
-  C --> D[근거 장부 기록]
-  D --> E[연구질문과 가설 구체화]
-  E --> F[부하 인지 팀 라우팅]
-  F --> G[세션 로그와 지시서 출력]
-  G --> H[수신 역할로 핸드오프]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">연구 아이디어 토론 요청</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">토론 모드 선택</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">소크라테스식 질문 토론</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">근거 장부 기록</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">연구질문과 가설 구체화</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">부하 인지 팀 라우팅</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">세션 로그와 지시서 출력</div>
+  <div class="nerv-flow-arr">↓<span>핸드오프</span></div>
+  <div class="nerv-flow-node out">수신 역할로 핸드오프</div>
+</div>
 
 ## 입·출력
 

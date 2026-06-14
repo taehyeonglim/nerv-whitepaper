@@ -77,19 +77,31 @@ cron 성격의 잡은 실행 래퍼(`silent_fail_alert.sh`)로 감싸서, 잡이
 
 잡 하나가 등록부터 실행, 그리고 성공/실패 처리까지 거치는 흐름은 다음과 같다.
 
-```mermaid
-flowchart TD
-    A[plist 등록] --> B[launchd 스케줄 예약]
-    B --> C[예약 시각 도달 시 잡 실행]
-    C --> D{종료 코드 판정}
-    D -->|성공| E[sentinel 성공 마커 갱신]
-    D -->|실패| F[silent_fail wrapper가 Discord 경보 발송]
-    E --> G[silent-fail-monitor 메타 감사]
-    F --> G
-    G --> H{예상 주기 안에 발화 흔적이 있는가}
-    H -->|있음| I[정상 — 무음 통과]
-    H -->|없음| J[잡 미발화로 판정 후 알림]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">plist 등록</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">launchd 스케줄 예약</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">예약 시각 도달 시 잡 실행</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">종료 코드 판정</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">성공</span><div class="nerv-flow-node">sentinel 성공 마커 갱신</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">실패</span><div class="nerv-flow-node">silent_fail wrapper가 Discord 경보 발송</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">silent-fail-monitor 메타 감사</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">예상 주기 안에 발화 흔적이 있는가</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">있음</span><div class="nerv-flow-node out">정상 — 무음 통과</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">없음</span><div class="nerv-flow-node out">잡 미발화로 판정 후 알림</div></div>
+    </div>
+  </div>
+</div>
 
 잡이 등록되면 launchd가 스케줄에 따라 예약하고, 정해진 시각이 오면 실행한다. 성공하면 sentinel 마커를 갱신해 "이 잡은 방금 잘 돌았다"는 흔적을 남기고, 실패하면 래퍼가 즉시 경보를 보낸다. 그리고 하루 끝의 메타 감사가 각 잡의 발화 흔적을 모아 점검하여, 흔적이 있으면 조용히 통과시키고 흔적이 없으면 "이 잡이 죽었다"고 판정해 알린다. 세 겹의 안전망이 직렬로 맞물려, 한 단계를 빠져나가더라도 다음 단계가 받아내는 구조다.
 

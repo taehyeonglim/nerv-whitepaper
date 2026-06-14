@@ -15,19 +15,35 @@ Markdown으로 변환된 학술 논문을 분석해 TL;DR, 핵심 기여, 방법
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[Markdown 논문 입력] --> B[길이 관점 옵션 파싱]
-  B --> C[본문 발췌 및 인용 추출]
-  C --> D[Grep 인용 재검증]
-  D --> E{Codex 위임 분기}
-  E -->|gpt-5.5 위임| F[자연어 종합 작성]
-  E -->|Haiku 잔류| G[인용 검증 wikilink 확인]
-  F --> H[요약 문서 조립]
-  G --> H
-  H --> I[구조화 요약 파일 저장]
-  I --> J[레이 후속 분석 소비]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">Markdown 논문 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">길이·관점 옵션 파싱</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">본문 발췌 및 인용 추출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Grep 인용 재검증</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path">
+        <span class="nerv-flow-tag codex">gpt-5.5 위임</span>
+        <div class="nerv-flow-node codex">자연어 종합 작성</div>
+      </div>
+      <div class="nerv-flow-path">
+        <span class="nerv-flow-tag">Haiku 잔류</span>
+        <div class="nerv-flow-node">인용 검증 · wikilink 확인</div>
+      </div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">요약 문서 조립</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">구조화 요약 파일 저장</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">레이 후속 분석 소비</div>
+</div>
 
 ## 입·출력
 

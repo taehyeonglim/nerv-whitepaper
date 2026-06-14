@@ -15,19 +15,29 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[주제 입력 및 탐색 깊이 지정] --> B[다중 소스 병렬 검색 over-retrieve]
-  B --> C[의미 관련성 재채점]
-  C --> D[DOI 유효성 검증]
-  D --> E{Codex 위임 분기}
-  E -->|semantic_rerank 종합| F[Codex gpt-5.5 의미 재채점과 통독]
-  E -->|파일 입출력 검증 잔류| G[Claude 메타데이터 추출과 할루시네이션 가드]
-  F --> H[커버리지 매니페스트 결정론 생성]
-  G --> H
-  H --> I[구조화 리포트 출력]
-  I --> J[소비 역할 레이 마리 아스카 신지]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">주제 입력 및 탐색 깊이 지정</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">다중 소스 병렬 검색 over-retrieve</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">의미 관련성 재채점</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">DOI 유효성 검증</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">Codex gpt-5.5 의미 재채점과 통독</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">Claude 메타데이터 추출과 할루시네이션 가드</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">커버리지 매니페스트 결정론 생성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">구조화 리포트 출력</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">소비 역할 레이 마리 아스카 신지</div>
+</div>
 
 ## 입·출력
 

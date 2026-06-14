@@ -15,18 +15,27 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[강의 콘텐츠 마크다운 입력] --> B[청중과 시간 구성 확인]
-  B --> C[콘텐츠 정독 후 시간 배분 추출]
-  C --> D[슬라이드 수와 섹션 구성 선언]
-  D --> E[템플릿 선택 후 인프라 복사]
-  E --> F[발표용 덱 작성]
-  F --> G[핸드아웃 인쇄용 덱 작성]
-  G --> H[검증 후 요약]
-  H --> I[슬라이드 덱 산출]
-  I --> J[PI 강의 활용]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">강의 콘텐츠 마크다운 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">청중과 시간 구성 확인</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">콘텐츠 정독 후 시간 배분 추출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">슬라이드 수와 섹션 구성 선언</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">템플릿 선택 후 인프라 복사</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">발표용 덱 작성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">핸드아웃 인쇄용 덱 작성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">검증 후 요약</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">슬라이드 덱 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">PI 강의 활용</div>
+</div>
 
 ## 입·출력
 

@@ -15,19 +15,29 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[주제 또는 논문 목록 입력] --> B[소스 입력 파싱]
-  B --> C[초록 방법론 결과 섹션 추출]
-  C --> D[비교 차원 설정]
-  D --> E[정규화된 비교 테이블 구성]
-  E --> F{Codex 위임 분기}
-  F -->|위임| G[Codex gpt-5.5 매트릭스 종합 및 합의 분석]
-  F -->|시스템 오류 시| H[Claude 직접 종합 fallback]
-  G --> I[비교 리포트 마크다운]
-  H --> I
-  I --> J[Discovery 산출 소비 역할로 전달]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">주제 또는 논문 목록 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">소스 입력 파싱</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">초록 방법론 결과 섹션 추출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">비교 차원 설정</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">정규화된 비교 테이블 구성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">Codex gpt-5.5 매트릭스 종합 및 합의 분석</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">Claude 직접 종합 fallback</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">비교 리포트 마크다운</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">Discovery 산출 소비 역할로 전달</div>
+</div>
 
 ## 입·출력
 

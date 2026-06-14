@@ -42,26 +42,43 @@ NERV의 7개 역할(캐릭터)은 각자 닫힌 도메인을 책임지지만, �
 
 전형적인 연구 흐름은 미사토에서 시작해 분석·발굴 역할을 거쳐 글쓰기로 모이고, 다시 품질·관리 역할로 빠져나간다. 레이는 그와 별도로 지식 데이터를 전 역할에 발행한다.
 
-```mermaid
-flowchart LR
-  misato[미사토 Operations]
-  rei[레이 Analysis]
-  kaoru[카오루 Discovery]
-  mari[마리 Writing]
-  asuka[아스카 Quality]
-  ritsuko[리츠코 Command]
-
-  misato -->|document_processing| rei
-  misato -->|document_processing| kaoru
-  kaoru -->|literature_discovery| rei
-  kaoru -->|literature_discovery| mari
-  rei -->|analysis_review| mari
-  mari -->|writing_assistance| asuka
-  mari -->|writing_assistance| ritsuko
-  ritsuko -.->|publishing_revision 역방향| mari
-  rei ==>|knowledge_management 발행| asuka
-  rei ==>|knowledge_management 발행| kaoru
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">미사토 Operations</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">document_processing</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">document_processing</span><div class="nerv-flow-node">레이 Analysis</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">document_processing</span><div class="nerv-flow-node">카오루 Discovery</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>카오루 literature_discovery</span></div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">literature_discovery</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">literature_discovery</span><div class="nerv-flow-node">레이 Analysis</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">literature_discovery</span><div class="nerv-flow-node">마리 Writing</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>레이 analysis_review</span></div>
+  <div class="nerv-flow-node">마리 Writing</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">writing_assistance</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">writing_assistance</span><div class="nerv-flow-node out">아스카 Quality</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">writing_assistance</span><div class="nerv-flow-node out">리츠코 Command</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>리츠코 publishing_revision 역방향</span></div>
+  <div class="nerv-flow-node out">마리 Writing 수정</div>
+  <div class="nerv-flow-arr">↓<span>레이 knowledge_management 발행</span></div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">knowledge_management 발행</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">knowledge_management</span><div class="nerv-flow-node out">아스카 Quality</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">knowledge_management</span><div class="nerv-flow-node out">카오루 Discovery</div></div>
+    </div>
+  </div>
+</div>
 
 실선은 정방향 핸드오프, 점선은 리뷰 결과를 글쓰기로 되돌리는 역방향 루프, 굵은 선은 레이가 지식 데이터를 발행-구독으로 흘려보내는 경로를 나타낸다.
 

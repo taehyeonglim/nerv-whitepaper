@@ -15,15 +15,21 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[프로젝트 YAML 스캔] --> B[마일스톤 추적]
-  B --> C[데드라인 임박 판별]
-  C --> D[진행률 계산]
-  D --> E[Gantt 차트 생성]
-  E --> F[타임라인 갱신 발행]
-  F --> G[Lab Director 구독]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">프로젝트 YAML 스캔</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">마일스톤 추적</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">데드라인 임박 판별</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">진행률 계산</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Gantt 차트 생성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">타임라인 갱신 발행</div>
+  <div class="nerv-flow-arr">↓<span>구독</span></div>
+  <div class="nerv-flow-node out">Lab Director 구독</div>
+</div>
 
 ## 입·출력
 

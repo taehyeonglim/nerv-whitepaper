@@ -15,20 +15,31 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[논문 경로 또는 DOI 입력] --> B[논문 로드]
-  B --> C[수치 클레임 추출]
-  C --> D[코드 소스 탐색]
-  D --> E[코드 구조 분석]
-  E --> F{Codex 위임 분기}
-  F -->|클레임 코드 매칭 검증 + 재현성 진단| G[Codex gpt-5.5]
-  F -->|논문 파싱 메타데이터 수집 유효성 검증| H[Claude 잔류]
-  G --> I[재현성 점수 계산]
-  H --> I
-  I --> J[감사 리포트 생성]
-  J --> K[레이 아스카 마리 소비]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">논문 경로 또는 DOI 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">논문 로드</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">수치 클레임 추출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">코드 소스 탐색</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">코드 구조 분석</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">클레임 코드 매칭 검증 · 재현성 진단</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">논문 파싱 · 메타데이터 수집 · 유효성 검증</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">재현성 점수 계산</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">감사 리포트 생성</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">레이 · 아스카 · 마리 소비</div>
+</div>
 
 ## 입·출력
 

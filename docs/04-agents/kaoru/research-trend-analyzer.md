@@ -15,20 +15,31 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[주제 키워드 입력] --> B[다년도 학술 DB 검색]
-  B --> C[연도별 출판 집계와 성장률]
-  C --> D[키워드 진화와 신흥 쇠퇴 주제 식별]
-  D --> E[핵심 연구자와 주요 학회 집계]
-  E --> F[결과 JSON 직렬화]
-  F --> G{종합 단계 분기}
-  G -->|자연어 트렌드 보고서| H[Codex gpt-5.5 위임]
-  G -->|수치 저자명 일치 검증| I[Claude 잔류]
-  H --> J[트렌드 보고서 산출]
-  I --> J
-  J --> K[소비 역할로 전달]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">주제 키워드 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">다년도 학술 DB 검색</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">연도별 출판 집계와 성장률</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">키워드 진화와 신흥 쇠퇴 주제 식별</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">핵심 연구자와 주요 학회 집계</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">결과 JSON 직렬화</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">자연어 트렌드 보고서</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">수치 저자명 일치 검증</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">트렌드 보고서 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">소비 역할로 전달</div>
+</div>
 
 ## 입·출력
 

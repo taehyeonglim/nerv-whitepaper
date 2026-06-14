@@ -15,20 +15,31 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[키워드 또는 시드 DOI 입력] --> B[다중 학술 DB 병렬 검색]
-  B --> C[중복 제거 DOI 우선]
-  C --> D[관련성 점수 계산 결정론]
-  D --> E[관련성 등급 분류]
-  E --> F[discovery packet 발행]
-  F --> G{Codex 위임 분기}
-  G -->|Codex gpt-5.5| H[Top-N 자연어 해설 의미적 보강]
-  G -->|Claude 잔류| I[할루시네이션 검증 패킷 검수]
-  H --> I
-  I --> J[관련 논문 추천 결과 출력]
-  J --> K[레이 마리 아스카 신지 소비]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">키워드 또는 시드 DOI 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">다중 학술 DB 병렬 검색</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">중복 제거 DOI 우선</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">관련성 점수 계산 결정론</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">관련성 등급 분류</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">discovery packet 발행</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">Top-N 자연어 해설 의미적 보강</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">할루시네이션 검증 패킷 검수</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">관련 논문 추천 결과 출력</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">레이 마리 아스카 신지 소비</div>
+</div>
 
 ## 입·출력
 

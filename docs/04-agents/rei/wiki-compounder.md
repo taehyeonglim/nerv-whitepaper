@@ -13,20 +13,29 @@
 새 논문 한 편이 요약·태깅된 뒤, 기존 지식 위키 전체를 역방향으로 갱신하여 지식을 복리로 축적하는 에이전트다. 한 건의 수집이 여러 개의 기존 페이지 업데이트로 이어지도록, 논문 간 교차 참조를 걸고 관련 개념 페이지를 강화한다. 새 논문이 기존 주장과 충돌하면 모순을 감지해 표시하고, 더 강한 근거로 기존 주장을 갱신하는 경우 명시적 근거 사슬로 기록한다. 카파시 LLM 위키의 Compounding 패턴 구현이다.
 
 ## 작동 방식
-```mermaid
-flowchart TD
-  A[새 요약 파일 입력] --> B[메타데이터 추출]
-  B --> C[관련 기존 논문 검색]
-  C --> D[기존 요약 파일 교차참조 갱신]
-  D --> E[개념 페이지 갱신 및 신규 생성]
-  E --> F{Codex 위임 분기}
-  F -->|gpt-5.5로 위임| G[교차 개념 종합 분석 및 모순 감지]
-  F -->|Claude 잔류| H[파일 IO 및 index log 갱신]
-  G --> I[모순 항목 본문 인용 재검증]
-  H --> J[CompoundResult 출력]
-  I --> J
-  J --> K[소비 역할 레이 및 PI 전체 발행구독]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">새 요약 파일 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">메타데이터 추출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">관련 기존 논문 검색</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">기존 요약 파일 교차참조 갱신</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">개념 페이지 갱신 및 신규 생성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">교차 개념 종합 분석 및 모순 감지</div><div class="nerv-flow-arr">↓</div><div class="nerv-flow-node">모순 항목 본문 인용 재검증</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">파일 IO 및 index log 갱신</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">CompoundResult 출력</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">소비 역할 레이 및 PI 전체 발행구독</div>
+</div>
 
 ## 입·출력
 - **입력**: 방금 생성된 새 논문 요약 파일 경로, 선택적 dry-run 플래그(수정 없이 계획만 출력)

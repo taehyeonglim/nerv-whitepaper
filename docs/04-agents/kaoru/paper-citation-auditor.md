@@ -15,22 +15,35 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[원고와 참고문헌 입력] --> B[참고문헌 APA 7판 파싱]
-  A --> C[본문 인용 추출]
-  B --> D[인용 그래프 감사]
-  C --> D
-  D --> E[orphan dangling 검출]
-  B --> F[원문 PDF 매달기 Phase 1 결정론 Claude]
-  F --> G{Phase 2 paraphrase 의미 일치}
-  G -->|의미 평가| H[Codex gpt-5.5 위임]
-  G -->|파일 IO 인용 추출| I[Claude 잔류]
-  E --> J[감사 결과 산출]
-  H --> J
-  I --> J
-  J --> K[레이 마리 아스카 소비]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">원고와 참고문헌 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">병렬 추출</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">참고문헌</span><div class="nerv-flow-node">참고문헌 APA 7판 파싱</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">본문</span><div class="nerv-flow-node">본문 인용 추출</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">인용 그래프 감사</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">orphan dangling 검출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">원문 PDF 매달기 Phase 1 결정론 Claude</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Phase 2 paraphrase 의미 일치 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">의미 평가</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">파일 IO 인용 추출</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">감사 결과 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">레이 마리 아스카 소비</div>
+</div>
 
 ## 입·출력
 

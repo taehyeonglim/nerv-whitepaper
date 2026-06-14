@@ -15,19 +15,27 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[통계 trace 가설 변수명 입력] --> B[인용 풀 추출]
-  B --> C[No-New-Numbers 헤더 prepend]
-  C --> D{Codex gpt-5.5 위임}
-  D -->|본문 생성| E[Codex가 APA 본문 작성]
-  D -->|검증 잔류| F[Claude 결정론 의미 검증]
-  E --> G[Python 인용 검증]
-  G --> F
-  F --> H[수치 1대1 매칭 점검]
-  H --> I[Results 섹션 + stat trace 산출]
-  I --> J[아스카 리츠코 소비]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">통계 trace 가설 변수명 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">인용 풀 추출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">No-New-Numbers 헤더 prepend</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">Codex가 APA 본문 작성</div><div class="nerv-flow-arr">↓</div><div class="nerv-flow-node">Python 인용 검증</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">Claude 결정론 의미 검증</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">수치 1대1 매칭 점검</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Results 섹션 + stat trace 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">아스카 리츠코 소비</div>
+</div>
 
 ## 입·출력
 

@@ -15,16 +15,23 @@ agent-installer는 GitHub에 공개된 서브에이전트 컬렉션에서 외부
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[설치 요청 또는 후보 URL] --> B[Discover 컬렉션 카테고리 조회]
-  B --> C[Evaluate 안전 게이트 검사]
-  C --> D[Install 이중 레이어 파일 생성]
-  D --> E[Register 메타데이터 갱신]
-  E --> F[Verify 인벤토리 정합성 점검]
-  F --> G[설치 결과 보고]
-  G --> H[소비 PI 및 리츠코 역할]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">설치 요청 또는 후보 URL</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Discover 컬렉션 카테고리 조회</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Evaluate 안전 게이트 검사</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Install 이중 레이어 파일 생성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Register 메타데이터 갱신</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Verify 인벤토리 정합성 점검</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">설치 결과 보고</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">소비 PI 및 리츠코 역할</div>
+</div>
 
 ## 입·출력
 

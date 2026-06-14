@@ -14,19 +14,31 @@
 논문 및 노트의 본문을 분석하여 키워드와 계층적 태그를 추천하고, Obsidian frontmatter에 적용합니다. Topic·Method·Status·Type·Year·Venue 등 정의된 분류 체계에 맞춰 태그를 표준화하며, 생성/수정/제출/발행 날짜와 상태 같은 메타데이터를 함께 추출합니다. 변경은 기본적으로 미리보기(dry-run)로 동작하고, 적용 전 원본을 백업하여 안전하게 되돌릴 수 있습니다.
 
 ## 작동 방식
-```mermaid
-flowchart TD
-  A[파일 또는 폴더 입력] --> B[본문 분석]
-  B --> C[날짜 상태 메타데이터 추출]
-  B --> D{Codex 위임 분기}
-  D -->|Codex gpt-5.5| E[본문 의미 taxonomy 매핑과 계층 태그 추천]
-  D -->|Haiku 잔류| F[신뢰도 임계값 재필터링]
-  E --> F
-  F --> G[frontmatter Edit 적용과 백업]
-  G --> H[Zotero 태그 동기화]
-  H --> I[태그 리포트 출력]
-  I --> J[지식 관리 소비 역할로 전달]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">파일 또는 폴더 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">본문 분석</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">날짜 상태 메타데이터 추출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">Codex gpt-5.5</span><div class="nerv-flow-node codex">본문 의미 taxonomy 매핑과 계층 태그 추천</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Haiku 잔류</span><div class="nerv-flow-node">신뢰도 임계값 재필터링</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">신뢰도 임계값 재필터링</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">frontmatter Edit 적용과 백업</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Zotero 태그 동기화</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">태그 리포트 출력</div>
+  <div class="nerv-flow-arr">↓<span>전달</span></div>
+  <div class="nerv-flow-node out">지식 관리 소비 역할로 전달</div>
+</div>
 
 ## 입·출력
 - **입력**: 대상 파일 또는 폴더 경로, 최대 태그 수·최소 신뢰도·모드·dry-run 등 옵션

@@ -15,18 +15,27 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[메모 태그 포함 초안 입력] --> B[메모 태그 인식]
-  B --> C[문헌 풀 추출과 사전 점검]
-  C --> D{Codex 위임 분기}
-  D -->|본문 생성| E[Codex gpt-5.5 영문 본문 작성]
-  D -->|검증과 문체| F[Claude 의미 검증과 문체 패스]
-  E --> G[Python 결정론 인용 검증]
-  F --> G
-  G --> H[메모 태그 제거된 완성 초안]
-  H --> I[아스카와 리츠코로 전달]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">메모 태그 포함 초안 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">메모 태그 인식</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">문헌 풀 추출과 사전 점검</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">Codex gpt-5.5 영문 본문 작성</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">Claude 의미 검증과 문체 패스</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">Python 결정론 인용 검증</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">메모 태그 제거된 완성 초안</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">아스카와 리츠코로 전달</div>
+</div>
 
 ## 입·출력
 

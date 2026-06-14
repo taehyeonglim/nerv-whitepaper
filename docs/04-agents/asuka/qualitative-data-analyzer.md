@@ -15,17 +15,25 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[질적 데이터 파일 입력] --> B[데이터 친숙화]
-  B --> C[초기 코딩 다중 LLM 병렬]
-  C --> D[의장 교차검증 병합]
-  D --> E[사용자 승인 게이트]
-  E --> F[주제 탐색 검토 정의]
-  F --> G[보고서 작성 단계]
-  G --> H[보고서 코드북 인용문 산출]
-  H --> I[results-writer discussion-writer 소비]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">질적 데이터 파일 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">데이터 친숙화</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">초기 코딩 다중 LLM 병렬</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">의장 교차검증 병합</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">사용자 승인 게이트</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">주제 탐색 검토 정의</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">보고서 작성 단계</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">보고서 코드북 인용문 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">results-writer · discussion-writer 소비</div>
+</div>
 
 ## 입·출력
 

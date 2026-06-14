@@ -15,16 +15,23 @@ paper-data-verifier는 작성된 학술 원고 본문에 등장하는 통계 수
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[원고와 ground truth 입력] --> B[통계 수치 정규식 추출]
-  B --> C[ground truth 산출물 매칭]
-  C --> D[종속변수 이름 추론]
-  D --> E[거짓 양성 가드 적용]
-  E --> F[수치 1대1 대조 검증]
-  F --> G[claims와 verifications 산출]
-  G --> H[레이 마리 아스카 소비]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">원고와 ground truth 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">통계 수치 정규식 추출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">ground truth 산출물 매칭</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">종속변수 이름 추론</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">거짓 양성 가드 적용</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">수치 1대1 대조 검증</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">claims와 verifications 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">레이 마리 아스카 소비</div>
+</div>
 
 ## 입·출력
 - **입력**: 검증 대상 학술 원고, 참고문헌 목록, 그리고 대조 기준이 되는 원본 통계 산출물(ground truth) 경로

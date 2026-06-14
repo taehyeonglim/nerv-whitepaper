@@ -15,16 +15,23 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[프롬프트 입력] --> B[옵션 파싱 품질 크기 경로]
-  B --> C[OAuth 프록시 호출]
-  C --> D[이미지 생성]
-  D --> E[PNG 유효성 검증]
-  E --> F[품질 점수 산정]
-  F --> G[PNG 파일 저장]
-  G --> H[소비 역할로 전달]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">프롬프트 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">옵션 파싱 품질 크기 경로</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">OAuth 프록시 호출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">이미지 생성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">PNG 유효성 검증</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">품질 점수 산정</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">PNG 파일 저장</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">소비 역할로 전달</div>
+</div>
 
 ## 입·출력
 

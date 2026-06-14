@@ -15,17 +15,27 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[논문 마크다운 입력] --> B[정량 분석 측정값 산출]
-  B --> C[언어 판정 영문 또는 한국어]
-  C -->|영문| D[Codex gpt-5.5 문체 개선 제안 종합]
-  C -->|한국어| E[Claude 학술 경어체 검토]
-  D --> F[교차 섹션 일관성 검증 선택]
-  E --> F
-  F --> G[스타일 리뷰 리포트 생성]
-  G --> H[소비 역할 마리 리츠코 PI]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">논문 마크다운 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">정량 분석 측정값 산출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">언어 판정 영문 또는 한국어</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-split">
+    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-paths">
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">Codex gpt-5.5 문체 개선 제안 종합</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">Claude 학술 경어체 검토</div></div>
+    </div>
+  </div>
+  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-node">교차 섹션 일관성 검증 선택</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">스타일 리뷰 리포트 생성</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">소비 역할 마리 리츠코 PI</div>
+</div>
 
 ## 입·출력
 

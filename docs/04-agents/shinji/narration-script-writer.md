@@ -15,16 +15,23 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[슬라이드 파일과 콘텐츠 입력] --> B[슬라이드 구조 파악]
-  B --> C[슬라이드별 시간 배분 계산]
-  C --> D[구술 대본 작성]
-  D --> E[강조와 전환 마커 삽입]
-  E --> F[총 글자수 기반 시간 검증]
-  F --> G[나레이션 대본 출력]
-  G --> H[음성 합성 파이프라인 소비]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">슬라이드 파일과 콘텐츠 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">슬라이드 구조 파악</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">슬라이드별 시간 배분 계산</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">구술 대본 작성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">강조와 전환 마커 삽입</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">총 글자수 기반 시간 검증</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">나레이션 대본 출력</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">음성 합성 파이프라인 소비</div>
+</div>
 
 ## 입·출력
 

@@ -188,3 +188,33 @@ body.nerv-mm-open { overflow: hidden; }
   .nerv-arch-char { width: 30%; min-width: 92px; }
   .nerv-arch .node-bot, .nerv-arch .node-out { min-width: 0; width: 100%; }
 }
+
+/* ───────────────────────────────────────────────
+   에이전트 플로우 다이어그램 (.nerv-flow-*) — Mermaid 대체 공유 컴포넌트
+   ─────────────────────────────────────────────── */
+.nerv-flow {
+  background: radial-gradient(130% 100% at 50% 0%, #16161f 0%, #0b0b10 72%);
+  border: 1px solid rgba(196, 22, 28, 0.5); border-radius: 16px;
+  padding: 1.5rem 1.2rem; margin: 1.3rem 0; color: #ebebf2;
+  display: flex; flex-direction: column; align-items: center;
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.4), inset 0 0 70px rgba(196, 22, 28, 0.06);
+}
+.nerv-flow-node {
+  background: linear-gradient(180deg, rgba(196, 22, 28, 0.16), rgba(196, 22, 28, 0.05));
+  border: 1px solid rgba(196, 22, 28, 0.55); border-radius: 10px;
+  padding: 0.6rem 1.1rem; text-align: center; font-weight: 600; max-width: 480px;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.nerv-flow-node small { display: block; font-weight: 400; font-size: 0.72rem; opacity: 0.7; margin-top: 0.18rem; }
+.nerv-flow-node:hover { transform: translateY(-2px); border-color: var(--nerv-crimson-bright); box-shadow: 0 6px 20px rgba(196, 22, 28, 0.25); }
+.nerv-flow-node.in { background: linear-gradient(180deg, rgba(255, 45, 45, 0.22), rgba(196, 22, 28, 0.07)); }
+.nerv-flow-node.out { background: linear-gradient(180deg, rgba(0, 214, 143, 0.15), rgba(0, 214, 143, 0.04)); border-color: rgba(0, 214, 143, 0.5); }
+.nerv-flow-node.codex { background: linear-gradient(180deg, rgba(160, 120, 255, 0.18), rgba(160, 120, 255, 0.05)); border-color: rgba(177, 140, 255, 0.6); }
+.nerv-flow-arr { color: var(--nerv-crimson); font-size: 1.05rem; margin: 0.3rem 0; line-height: 1; }
+.nerv-flow-arr span { font-size: 0.64rem; color: #a8a8b2; margin-left: 0.35rem; vertical-align: middle; }
+.nerv-flow-split { width: 100%; max-width: 640px; border: 1px dashed rgba(196, 22, 28, 0.42); border-radius: 12px; padding: 0.6rem 0.5rem 0.85rem; }
+.nerv-flow-split-head { text-align: center; font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--nerv-crimson-bright); margin-bottom: 0.55rem; font-weight: 700; }
+.nerv-flow-split-paths { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; }
+.nerv-flow-path { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; flex: 1; min-width: 190px; }
+.nerv-flow-tag { font-size: 0.62rem; padding: 0.1rem 0.55rem; border-radius: 999px; border: 1px solid rgba(196, 22, 28, 0.5); color: #cfcfd6; }
+.nerv-flow-tag.codex { border-color: rgba(177, 140, 255, 0.6); color: #b18cff; }

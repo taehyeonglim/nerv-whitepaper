@@ -21,20 +21,26 @@
 에반게리온의 특무기관 *NERV*와 3대 슈퍼컴퓨터 *MAGI*를 모티프로, **7명의 캐릭터(역할)**가
 에이전트를 소유하고 Discord 봇이 디스패치하며, MAGI 사상의 **자율 교차검증**으로 품질을 지킵니다.
 
-```mermaid
-flowchart TD
-  PI[PI 사용자] --> BOT[Discord 봇 · MAGI 코디네이터]
-  BOT --> R[리츠코 · Command]
-  BOT --> M[미사토 · Operations]
-  BOT --> RE[레이 · Analysis]
-  BOT --> A[아스카 · Quality]
-  BOT --> K[카오루 · Discovery]
-  BOT --> MA[마리 · Writing]
-  BOT --> S[신지 · Learning]
-  R & M & RE & A & K & MA & S --> AG[38 서브에이전트 + 7 Python 파이프라인]
-  AG --> SH[공유 데이터 · Handoff Schema]
-  SH --> OUT[연구 산출]
+```text
+                        PI 사용자
+                           │
+            Discord 봇 · MAGI 중앙 코디네이터
+                           │  7 캐릭터 Webhook 라우팅
+                           ▼
+   ┌───────────────────────────────────────────────────┐
+   │  리츠코 · 미사토 · 레이 · 아스카 · 카오루 · 마리 · 신지  │
+   │            7 캐릭터(역할) — 도메인별 에이전트 소유        │
+   └───────────────────────────────────────────────────┘
+                           │
+            38 서브에이전트 + 7 Python 파이프라인
+                           │
+            공유 데이터 계층 · Handoff Schema (8 유형)
+                           │
+                    연구 산출  ──►  PI
 ```
+
+> 🎛 인터랙티브 다이어그램(크림슨 브랜딩·캐릭터 아바타·클릭 전체화면)은
+> **[백서 §2 시스템 아키텍처](https://taehyeonglim.github.io/nerv-whitepaper/02-architecture/)** 에서 볼 수 있습니다.
 
 ## 이 백서가 담는 것
 

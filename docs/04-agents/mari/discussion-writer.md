@@ -15,16 +15,23 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[Results 및 Intro Methods 입력] --> B[스타일 길이 언어 옵션 적용]
-  B --> C[인용 풀 추출 및 사전 점검]
-  C --> D[본문 생성 Codex gpt-5.5 위임]
-  D --> E[Python 결정론 인용 검증]
-  E --> F[Claude 의미 검증 및 문체 패스]
-  F --> G[Discussion 섹션 마크다운 출력]
-  G --> H[아스카 리츠코로 전달]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">Results 및 Intro Methods 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">스타일 길이 언어 옵션 적용</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">인용 풀 추출 및 사전 점검</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node codex">본문 생성 Codex gpt-5.5 위임</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Python 결정론 인용 검증</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Claude 의미 검증 및 문체 패스</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Discussion 섹션 마크다운 출력</div>
+  <div class="nerv-flow-arr">↓<span>전달</span></div>
+  <div class="nerv-flow-node out">아스카 리츠코로 전달</div>
+</div>
 
 ## 입·출력
 

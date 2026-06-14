@@ -15,16 +15,23 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[연구계획서 방법론 문서 입력] --> B[기관 템플릿 선택]
-  B --> C[연구 배경 목적 정리]
-  C --> D[참여자 절차 윤리 고려사항 정리]
-  D --> E[신청서 동의서 작성]
-  E --> F[참여자 보호 항목 검토]
-  F --> G[IRB 서류 산출]
-  G --> H[PI 제출 검토]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">연구계획서 방법론 문서 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">기관 템플릿 선택</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">연구 배경 목적 정리</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">참여자 절차 윤리 고려사항 정리</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">신청서 동의서 작성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">참여자 보호 항목 검토</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">IRB 서류 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">PI 제출 검토</div>
+</div>
 
 ## 입·출력
 

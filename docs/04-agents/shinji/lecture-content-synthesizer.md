@@ -15,16 +15,23 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[강의 주제와 섹션 정보 입력] --> B[연구 자료 로드]
-  B --> C[핵심 개념 분석]
-  C --> D[교수학적 변환 비유와 예시]
-  D --> E[내러티브 구성 도입부터 전환까지]
-  E --> F[Speaker Notes 작성]
-  F --> G[마크다운 강의 콘텐츠 저장]
-  G --> H[신지 후속 강의 에이전트로 전달]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">강의 주제와 섹션 정보 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">연구 자료 로드</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">핵심 개념 분석</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">교수학적 변환 비유와 예시</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">내러티브 구성 도입부터 전환까지</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Speaker Notes 작성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">마크다운 강의 콘텐츠 저장</div>
+  <div class="nerv-flow-arr">↓<span>전달</span></div>
+  <div class="nerv-flow-node out">신지 후속 강의 에이전트로 전달</div>
+</div>
 
 ## 입·출력
 

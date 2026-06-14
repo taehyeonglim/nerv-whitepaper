@@ -15,18 +15,27 @@
 
 ## 작동 방식
 
-```mermaid
-flowchart TD
-  A[예산 분석 요청] --> B[프로젝트 식별]
-  B --> C[stale 검사 mtime 비교]
-  C --> D[예산 요약 데이터 로드]
-  D --> E[항목별 집행률 계산]
-  E --> F[과다 과소 집행 감지]
-  F --> G[다음 연차 배분 제안]
-  G --> H[3종 시나리오 생성]
-  H --> I[분석 리포트 산출]
-  I --> J[PI 의사결정 지원]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">예산 분석 요청</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">프로젝트 식별</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">stale 검사 mtime 비교</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">예산 요약 데이터 로드</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">항목별 집행률 계산</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">과다 과소 집행 감지</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">다음 연차 배분 제안</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">3종 시나리오 생성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">분석 리포트 산출</div>
+  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-node out">PI 의사결정 지원</div>
+</div>
 
 ## 입·출력
 

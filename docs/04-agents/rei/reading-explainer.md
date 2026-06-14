@@ -14,17 +14,25 @@
 우선순위 추천기가 정한 논문을 통독하고, 연구자가 "왜 지금 이 논문을 읽어야 하는지"와 "내 프로젝트 어디에 어떻게 기여하는지"를 즉시 이해할 수 있는 Reading Brief를 만든다. 본문 인용은 실제 파일에서 확인한 구절만 사용하며, 본문이 없을 때는 초록·메타 수준의 축소 브리프로 격하한다. 프로젝트 기여 매핑은 각 프로젝트 설정 파일의 실제 필요·마일스톤에 연결한다.
 
 ## 작동 방식
-```mermaid
-flowchart TD
-  A[citekey 입력] --> B[우선순위 항목 조회]
-  B --> C[본문 보유 여부 확인]
-  C --> D[본문 통독 또는 축소 브리프]
-  D --> E[핵심 주장 추출]
-  E --> F[프로젝트 기여 매핑]
-  F --> G[Reading Brief 작성]
-  G --> H[상태 briefed 전환]
-  H --> I[레이 지식관리로 환류]
-```
+<div class="nerv-flow">
+  <div class="nerv-flow-node in">citekey 입력</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">우선순위 항목 조회</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">본문 보유 여부 확인</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">본문 통독 또는 축소 브리프</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">핵심 주장 추출</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">프로젝트 기여 매핑</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">Reading Brief 작성</div>
+  <div class="nerv-flow-arr">↓</div>
+  <div class="nerv-flow-node">상태 briefed 전환</div>
+  <div class="nerv-flow-arr">↓<span>환류</span></div>
+  <div class="nerv-flow-node out">레이 지식관리로 환류</div>
+</div>
 
 ## 입·출력
 
