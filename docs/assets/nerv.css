@@ -1,0 +1,79 @@
+/* NERV 백서 — 크림슨/MAGI 테마 오버라이드 */
+:root {
+  --nerv-crimson: #c4161c;
+  --nerv-crimson-bright: #ff2d2d;
+  --nerv-amber: #ff8a00;
+  --nerv-green: #00d68f;
+}
+
+/* 다크(slate) 스킴: 검정 베이스 + 크림슨 액센트 */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #0a0a0a;
+  --md-primary-fg-color--light: #1a1a1a;
+  --md-primary-fg-color--dark: #000000;
+  --md-accent-fg-color: var(--nerv-crimson-bright);
+  --md-default-bg-color: #0d0d0f;
+  --md-typeset-a-color: var(--nerv-crimson-bright);
+}
+
+/* 라이트 스킴 액센트 통일 */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--nerv-crimson);
+  --md-accent-fg-color: var(--nerv-crimson);
+  --md-typeset-a-color: var(--nerv-crimson);
+}
+
+/* 헤더 하단 크림슨 헤어라인 */
+.md-header {
+  border-bottom: 2px solid var(--nerv-crimson);
+}
+
+/* 표지 히어로 배너 */
+.nerv-hero {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 0 1.5rem;
+  border: 1px solid rgba(196, 22, 28, 0.4);
+}
+.nerv-hero img { width: 100%; display: block; }
+.nerv-hero .nerv-hero-cap {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 1.2rem 1.4rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
+  color: #fff;
+}
+
+/* 캐릭터 카드 그리드 (역할 매트릭스) */
+.nerv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+.nerv-card {
+  border: 1px solid rgba(196, 22, 28, 0.35);
+  border-radius: 10px;
+  padding: 0.8rem;
+  text-align: center;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.nerv-card:hover { border-color: var(--nerv-crimson-bright); transform: translateY(-2px); }
+.nerv-card img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 2px solid var(--nerv-crimson); }
+.nerv-card .role { font-size: .72rem; opacity: .75; display: block; }
+
+/* 캐릭터 페이지 헤더 (아바타 + 포토카드 나란히) */
+.nerv-char-head { display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: flex-start; margin: 1rem 0; }
+.nerv-char-head img.avatar { width: 160px; height: 160px; border-radius: 12px; object-fit: cover; border: 2px solid var(--nerv-crimson); }
+.nerv-char-head img.card { width: 200px; border-radius: 12px; box-shadow: 0 6px 24px rgba(0,0,0,.45); }
+
+/* 모델 배지 */
+.badge { display: inline-block; padding: .08rem .5rem; border-radius: 999px; font-size: .72rem; font-weight: 600; line-height: 1.5; }
+.badge.opus   { background: rgba(196,22,28,.18);  color: var(--nerv-crimson-bright); border: 1px solid var(--nerv-crimson); }
+.badge.sonnet { background: rgba(255,138,0,.15);   color: var(--nerv-amber);  border: 1px solid var(--nerv-amber); }
+.badge.haiku  { background: rgba(0,214,143,.15);   color: var(--nerv-green);  border: 1px solid var(--nerv-green); }
+.badge.python { background: rgba(80,160,255,.15);  color: #6cb2ff; border: 1px solid #6cb2ff; }
+.badge.codex  { background: rgba(160,120,255,.15);  color: #b18cff; border: 1px solid #b18cff; }
+
+/* Mermaid 다이어그램 가독성 */
+.mermaid { text-align: center; }
