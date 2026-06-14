@@ -218,3 +218,18 @@ body.nerv-mm-open { overflow: hidden; }
 .nerv-flow-path { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; flex: 1; min-width: 190px; }
 .nerv-flow-tag { font-size: 0.62rem; padding: 0.1rem 0.55rem; border-radius: 999px; border: 1px solid rgba(196, 22, 28, 0.5); color: #cfcfd6; }
 .nerv-flow-tag.codex { border-color: rgba(177, 140, 255, 0.6); color: #b18cff; }
+
+/* ── 비선형 구조 프리미티브 (fan-out · subgraph · converge) ── */
+.nerv-flow-row { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; align-items: stretch; }
+.nerv-flow-node.sm { min-width: 0; padding: 0.45rem 0.7rem; font-size: 0.82rem; max-width: 200px; }
+.nerv-flow-col { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+.nerv-flow-group { width: 100%; max-width: 760px; border: 1px dashed rgba(196, 22, 28, 0.42); border-radius: 12px; padding: 0.6rem 0.6rem 0.85rem; }
+.nerv-flow-group.shared { border-color: rgba(0, 214, 143, 0.45); }
+.nerv-flow-group-label { text-align: center; font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--nerv-crimson-bright); margin-bottom: 0.5rem; font-weight: 700; }
+.nerv-flow-group.shared .nerv-flow-group-label { color: var(--nerv-green); }
+.nerv-flow-conv { color: var(--nerv-crimson); font-size: 0.8rem; opacity: 0.8; text-align: center; margin: 0.15rem 0; letter-spacing: 0.3em; }
+
+/* 아키텍처: 캐릭터별 소유 에이전트 행 (캐릭터 카드 아래 정렬) */
+.nerv-arch-agents { display: flex; gap: 0.55rem; justify-content: center; flex-wrap: wrap; margin-top: 0.2rem; }
+.nerv-arch-agent { width: 118px; font-size: 0.62rem; text-align: center; padding: 0.4rem 0.3rem; border: 1px solid rgba(196, 22, 28, 0.4); border-radius: 8px; background: rgba(255,255,255,0.02); line-height: 1.25; }
+@media (max-width: 640px) { .nerv-arch-agent { width: 30%; min-width: 92px; } }

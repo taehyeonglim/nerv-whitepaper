@@ -20,20 +20,22 @@
   <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-node">인용 풀 추출 및 사전 점검</div>
   <div class="nerv-flow-arr">↓</div>
-  <div class="nerv-flow-node">프롬프트 구성 · 인용 allowlist + 문체 가이드</div>
+  <div class="nerv-flow-node">프롬프트 구성 - 인용 allowlist + 문체 가이드</div>
   <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-split">
     <div class="nerv-flow-split-head">Codex 위임 분기</div>
     <div class="nerv-flow-split-paths">
-      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">Codex gpt-5.5 가 Methods 초안 작성</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">본문 생성</span><div class="nerv-flow-node codex">Codex gpt-5.5 가 Methods 초안 작성</div></div>
       <div class="nerv-flow-path"><span class="nerv-flow-tag">검증 잔류</span><div class="nerv-flow-node">Python 결정론 인용 검증</div></div>
     </div>
   </div>
-  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-conv">▼ ▼</div>
+  <div class="nerv-flow-node">Python 결정론 인용 검증</div>
+  <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-node">Claude 의미 검증 및 문체 패스</div>
   <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-node">Methods 섹션 + 검증 메타데이터</div>
-  <div class="nerv-flow-arr">↓<span>소비</span></div>
+  <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-node out">아스카 품질검토 · 리츠코 · PI</div>
 </div>
 

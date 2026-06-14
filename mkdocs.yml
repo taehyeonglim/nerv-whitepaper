@@ -67,10 +67,10 @@ markdown_extensions:
       permalink: true
 
 extra_css:
-  - assets/nerv.css?v=7
+  - assets/nerv.css?v=8
 
 extra_javascript:
-  - assets/diagram-zoom.js?v=7
+  - assets/diagram-zoom.js?v=8
 
 extra:
   social:

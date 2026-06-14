@@ -25,21 +25,26 @@
       <div class="nerv-flow-path"><span class="nerv-flow-tag">본문</span><div class="nerv-flow-node">본문 인용 추출</div></div>
     </div>
   </div>
-  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-conv">▼ ▼</div>
+  <div class="nerv-flow-arr">↓<span>참고문헌 + 본문 인용 합류</span></div>
   <div class="nerv-flow-node">인용 그래프 감사</div>
   <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-node">orphan dangling 검출</div>
-  <div class="nerv-flow-arr">↓</div>
-  <div class="nerv-flow-node">원문 PDF 매달기 Phase 1 결정론 Claude</div>
-  <div class="nerv-flow-arr">↓</div>
-  <div class="nerv-flow-split">
-    <div class="nerv-flow-split-head">Phase 2 paraphrase 의미 일치 분기</div>
-    <div class="nerv-flow-split-paths">
-      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">의미 평가</div></div>
-      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">파일 IO 인용 추출</div></div>
+  <div class="nerv-flow-arr">↓<span>orphan dangling → 감사 결과</span></div>
+  <div class="nerv-flow-group">
+    <div class="nerv-flow-group-label">참고문헌 파싱 → 원문 검증 분기</div>
+    <div class="nerv-flow-node">원문 PDF 매달기 Phase 1 결정론 Claude</div>
+    <div class="nerv-flow-arr">↓</div>
+    <div class="nerv-flow-split">
+      <div class="nerv-flow-split-head">Phase 2 paraphrase 의미 일치</div>
+      <div class="nerv-flow-split-paths">
+        <div class="nerv-flow-path"><span class="nerv-flow-tag codex">의미 평가</span><div class="nerv-flow-node codex">Codex gpt-5.5 위임</div></div>
+        <div class="nerv-flow-path"><span class="nerv-flow-tag">파일 IO 인용 추출</span><div class="nerv-flow-node">Claude 잔류</div></div>
+      </div>
     </div>
   </div>
-  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-conv">▼ ▼ ▼</div>
+  <div class="nerv-flow-arr">↓<span>orphan dangling + 의미 평가 + Claude 잔류 합류</span></div>
   <div class="nerv-flow-node">감사 결과 산출</div>
   <div class="nerv-flow-arr">↓<span>소비</span></div>
   <div class="nerv-flow-node out">레이 마리 아스카 소비</div>

@@ -23,13 +23,13 @@
   <div class="nerv-flow-node">No-New-Numbers 헤더 prepend</div>
   <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-split">
-    <div class="nerv-flow-split-head">Codex 위임 분기</div>
+    <div class="nerv-flow-split-head">Codex gpt-5.5 위임</div>
     <div class="nerv-flow-split-paths">
-      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">Codex가 APA 본문 작성</div><div class="nerv-flow-arr">↓</div><div class="nerv-flow-node">Python 인용 검증</div></div>
-      <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">Claude 결정론 의미 검증</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">본문 생성</span><div class="nerv-flow-node codex">Codex가 APA 본문 작성</div><div class="nerv-flow-arr">↓</div><div class="nerv-flow-node">Python 인용 검증</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag">검증 잔류</span><div class="nerv-flow-node">Claude 결정론 의미 검증</div></div>
     </div>
   </div>
-  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-conv">▼ ▼</div>
   <div class="nerv-flow-node">수치 1대1 매칭 점검</div>
   <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-node">Results 섹션 + stat trace 산출</div>

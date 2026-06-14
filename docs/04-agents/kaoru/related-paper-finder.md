@@ -31,11 +31,13 @@
   <div class="nerv-flow-split">
     <div class="nerv-flow-split-head">Codex 위임 분기</div>
     <div class="nerv-flow-split-paths">
-      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">gpt-5.5 위임</span><div class="nerv-flow-node codex">Top-N 자연어 해설 의미적 보강</div></div>
+      <div class="nerv-flow-path"><span class="nerv-flow-tag codex">Codex gpt-5.5</span><div class="nerv-flow-node codex">Top-N 자연어 해설 의미적 보강</div></div>
       <div class="nerv-flow-path"><span class="nerv-flow-tag">Claude 잔류</span><div class="nerv-flow-node">할루시네이션 검증 패킷 검수</div></div>
     </div>
   </div>
-  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-conv">▼ ▼</div>
+  <div class="nerv-flow-node">할루시네이션 검증 패킷 검수</div>
+  <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-node">관련 논문 추천 결과 출력</div>
   <div class="nerv-flow-arr">↓<span>소비</span></div>
   <div class="nerv-flow-node out">레이 마리 아스카 신지 소비</div>

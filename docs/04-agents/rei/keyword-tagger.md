@@ -18,8 +18,11 @@
   <div class="nerv-flow-node in">파일 또는 폴더 입력</div>
   <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-node">본문 분석</div>
-  <div class="nerv-flow-arr">↓</div>
-  <div class="nerv-flow-node">날짜 상태 메타데이터 추출</div>
+  <div class="nerv-flow-arr">↓<span>fan-out</span></div>
+  <div class="nerv-flow-row">
+    <div class="nerv-flow-node sm">날짜 상태 메타데이터 추출</div>
+    <div class="nerv-flow-node sm">Codex 위임 분기</div>
+  </div>
   <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-split">
     <div class="nerv-flow-split-head">Codex 위임 분기</div>
@@ -28,7 +31,7 @@
       <div class="nerv-flow-path"><span class="nerv-flow-tag">Haiku 잔류</span><div class="nerv-flow-node">신뢰도 임계값 재필터링</div></div>
     </div>
   </div>
-  <div class="nerv-flow-arr">↓<span>합류</span></div>
+  <div class="nerv-flow-conv">▼ ▼</div>
   <div class="nerv-flow-node">신뢰도 임계값 재필터링</div>
   <div class="nerv-flow-arr">↓</div>
   <div class="nerv-flow-node">frontmatter Edit 적용과 백업</div>

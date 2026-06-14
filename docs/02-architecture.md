@@ -51,23 +51,36 @@ PI의 요청은 위에서 아래로 흐르고, 산출물은 공유 계층을 거
   <div class="nerv-arch-tier">
     <span class="nerv-arch-label">오케스트레이션</span>
     <div class="nerv-arch-row">
-      <div class="nerv-arch-node node-bot">Discord 봇 · MAGI 중앙 코디네이터<small>요청 분석 후 7 캐릭터 Webhook으로 라우팅</small></div>
+      <div class="nerv-arch-node node-bot">Discord 봇 · MAGI 중앙 코디네이터</div>
     </div>
   </div>
-  <div class="nerv-arch-flow">↓<span>7 캐릭터(역할)로 분기</span></div>
+  <div class="nerv-arch-flow">↓<span>7 캐릭터 Webhook 라우팅</span></div>
   <div class="nerv-arch-tier">
-    <span class="nerv-arch-label">7 캐릭터 · 역할별 에이전트 소유</span>
+    <span class="nerv-arch-label">7 캐릭터 (역할)</span>
     <div class="nerv-arch-row nerv-arch-chars">
-      <div class="nerv-arch-char"><img src="../assets/characters/avatars/ritsuko.jpg" alt="리츠코"><b>리츠코</b><span>Project Command</span><em>5 + 1 Py</em></div>
-      <div class="nerv-arch-char"><img src="../assets/characters/avatars/misato.jpg" alt="미사토"><b>미사토</b><span>Operations</span><em>6 Py</em></div>
-      <div class="nerv-arch-char"><img src="../assets/characters/avatars/rei.jpg" alt="레이"><b>레이</b><span>Analysis · Knowledge</span><em>7</em></div>
-      <div class="nerv-arch-char"><img src="../assets/characters/avatars/asuka.jpg" alt="아스카"><b>아스카</b><span>Quality · Review</span><em>4</em></div>
-      <div class="nerv-arch-char"><img src="../assets/characters/avatars/kaoru.jpg" alt="카오루"><b>카오루</b><span>Discovery · Insight</span><em>9</em></div>
-      <div class="nerv-arch-char"><img src="../assets/characters/avatars/mari.jpg" alt="마리"><b>마리</b><span>Creative · Writing</span><em>6 + skill</em></div>
-      <div class="nerv-arch-char"><img src="../assets/characters/avatars/shinji.jpg" alt="신지"><b>신지</b><span>Personal · Learning</span><em>7</em></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/ritsuko.jpg" alt="리츠코"><b>리츠코</b><span>Project Command</span></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/misato.jpg" alt="미사토"><b>미사토</b><span>Operations</span></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/rei.jpg" alt="레이"><b>레이</b><span>Analysis · Knowledge</span></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/asuka.jpg" alt="아스카"><b>아스카</b><span>Quality · Review</span></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/kaoru.jpg" alt="카오루"><b>카오루</b><span>Discovery · Insight</span></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/mari.jpg" alt="마리"><b>마리</b><span>Creative · Writing</span></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/shinji.jpg" alt="신지"><b>신지</b><span>Personal · Learning</span></div>
     </div>
   </div>
-  <div class="nerv-arch-flow">↓<span>산출물 발행 · 역할 간 핸드오프</span></div>
+  <div class="nerv-arch-flow">↓<span>각 캐릭터 → 소유 에이전트</span></div>
+  <div class="nerv-arch-tier">
+    <span class="nerv-arch-label">캐릭터별 소유 에이전트</span>
+    <div class="nerv-arch-agents">
+      <div class="nerv-arch-agent">서브에이전트 5<br>+ github-hunter Py</div>
+      <div class="nerv-arch-agent">Python 파이프라인 6<br>문서처리</div>
+      <div class="nerv-arch-agent">서브에이전트 7<br>분석·지식</div>
+      <div class="nerv-arch-agent">서브에이전트 4<br>품질·검토</div>
+      <div class="nerv-arch-agent">서브에이전트 9<br>탐색·발굴</div>
+      <div class="nerv-arch-agent">서브에이전트 6<br>+ kaeim 스킬</div>
+      <div class="nerv-arch-agent">서브에이전트 7<br>강의·학습</div>
+    </div>
+  </div>
+  <div class="nerv-arch-flow">↓<span>모든 산출 공유 계층으로 수렴</span></div>
   <div class="nerv-arch-tier">
     <span class="nerv-arch-label">공유 계층</span>
     <div class="nerv-arch-row">
@@ -79,7 +92,13 @@ PI의 요청은 위에서 아래로 흐르고, 산출물은 공유 계층을 거
   <div class="nerv-arch-tier">
     <span class="nerv-arch-label">산출</span>
     <div class="nerv-arch-row">
-      <div class="nerv-arch-node node-out">요약 · 분석 · 작성 · 발굴 · 강의 → PI</div>
+      <div class="nerv-arch-node node-out">요약 · 분석 · 작성 · 발굴 · 강의</div>
+    </div>
+  </div>
+  <div class="nerv-arch-flow">↓<span>PI에게 전달 (순환)</span></div>
+  <div class="nerv-arch-tier">
+    <div class="nerv-arch-row">
+      <div class="nerv-arch-node node-pi">PI 사용자</div>
     </div>
   </div>
 </div>
