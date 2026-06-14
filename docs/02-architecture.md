@@ -80,6 +80,57 @@ flowchart TD
 
 ---
 
+### 같은 구조 — HTML/CSS 프로토타입 (비교용)
+
+> 아래는 위 Mermaid 다이어그램과 **동일한 구조**를 HTML/CSS로 직접 구현한 버전입니다.
+> NERV 크림슨 브랜딩 · 캐릭터 아바타 · hover 효과를 적용했습니다. 두 방식을 비교해 보세요.
+
+<div class="nerv-arch">
+  <div class="nerv-arch-tier">
+    <span class="nerv-arch-label">진입점</span>
+    <div class="nerv-arch-row">
+      <div class="nerv-arch-node node-pi">PI 사용자<small>모든 요청의 단일 진입점</small></div>
+    </div>
+  </div>
+  <div class="nerv-arch-flow">↓</div>
+  <div class="nerv-arch-tier">
+    <span class="nerv-arch-label">오케스트레이션</span>
+    <div class="nerv-arch-row">
+      <div class="nerv-arch-node node-bot">Discord 봇 · MAGI 중앙 코디네이터<small>요청 분석 후 7 캐릭터 Webhook으로 라우팅</small></div>
+    </div>
+  </div>
+  <div class="nerv-arch-flow">↓<span>7 캐릭터(역할)로 분기</span></div>
+  <div class="nerv-arch-tier">
+    <span class="nerv-arch-label">7 캐릭터 · 역할별 에이전트 소유</span>
+    <div class="nerv-arch-row nerv-arch-chars">
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/ritsuko.jpg" alt="리츠코"><b>리츠코</b><span>Project Command</span><em>5 + 1 Py</em></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/misato.jpg" alt="미사토"><b>미사토</b><span>Operations</span><em>6 Py</em></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/rei.jpg" alt="레이"><b>레이</b><span>Analysis · Knowledge</span><em>7</em></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/asuka.jpg" alt="아스카"><b>아스카</b><span>Quality · Review</span><em>4</em></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/kaoru.jpg" alt="카오루"><b>카오루</b><span>Discovery · Insight</span><em>9</em></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/mari.jpg" alt="마리"><b>마리</b><span>Creative · Writing</span><em>6 + skill</em></div>
+      <div class="nerv-arch-char"><img src="../assets/characters/avatars/shinji.jpg" alt="신지"><b>신지</b><span>Personal · Learning</span><em>7</em></div>
+    </div>
+  </div>
+  <div class="nerv-arch-flow">↓<span>산출물 발행 · 역할 간 핸드오프</span></div>
+  <div class="nerv-arch-tier">
+    <span class="nerv-arch-label">공유 계층</span>
+    <div class="nerv-arch-row">
+      <div class="nerv-arch-node node-shared">발행–구독<small>Research/.shared</small></div>
+      <div class="nerv-arch-node node-shared">핸드오프 스키마<small>8 유형</small></div>
+    </div>
+  </div>
+  <div class="nerv-arch-flow">↓</div>
+  <div class="nerv-arch-tier">
+    <span class="nerv-arch-label">산출</span>
+    <div class="nerv-arch-row">
+      <div class="nerv-arch-node node-out">요약 · 분석 · 작성 · 발굴 · 강의 → PI</div>
+    </div>
+  </div>
+</div>
+
+---
+
 ## 2.3 캐릭터별 소유 에이전트
 
 7명의 캐릭터가 명확한 도메인 경계로 에이전트를 나누어 소유합니다.

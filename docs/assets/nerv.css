@@ -133,3 +133,58 @@ body.nerv-mm-open { overflow: hidden; }
   background: rgba(0, 0, 0, 0.45); padding: 0.35rem 0.85rem; border-radius: 999px;
   border: 1px solid rgba(196, 22, 28, 0.4); pointer-events: none; white-space: nowrap;
 }
+
+/* ───────────────────────────────────────────────
+   아키텍처 다이어그램 — HTML/CSS 프로토타입 (.nerv-arch-*)
+   자체 다크 캔버스라 페이지 라이트/다크와 무관하게 동일하게 보임
+   ─────────────────────────────────────────────── */
+.nerv-arch {
+  background: radial-gradient(130% 100% at 50% 0%, #16161f 0%, #0b0b10 72%);
+  border: 1px solid rgba(196, 22, 28, 0.5);
+  border-radius: 16px;
+  padding: 1.7rem 1.3rem 2rem;
+  margin: 1.4rem 0;
+  color: #ebebf2;
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.4), inset 0 0 70px rgba(196, 22, 28, 0.06);
+  overflow: hidden;
+}
+.nerv-arch-tier { max-width: 1000px; margin: 0 auto; }
+.nerv-arch-label {
+  display: block; text-align: center; font-weight: 700;
+  font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--nerv-crimson-bright); opacity: 0.85; margin-bottom: 0.5rem;
+}
+.nerv-arch-row { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; }
+.nerv-arch-node {
+  background: linear-gradient(180deg, rgba(196, 22, 28, 0.17), rgba(196, 22, 28, 0.05));
+  border: 1px solid rgba(196, 22, 28, 0.55);
+  border-radius: 12px; padding: 0.7rem 1.2rem; text-align: center; font-weight: 600;
+  min-width: 180px;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.nerv-arch-node small { display: block; font-weight: 400; font-size: 0.72rem; opacity: 0.7; margin-top: 0.22rem; }
+.nerv-arch-node:hover { transform: translateY(-2px); border-color: var(--nerv-crimson-bright); box-shadow: 0 6px 22px rgba(196, 22, 28, 0.28); }
+.nerv-arch .node-pi { min-width: 230px; background: linear-gradient(180deg, rgba(255, 45, 45, 0.24), rgba(196, 22, 28, 0.08)); }
+.nerv-arch .node-bot { min-width: 330px; font-size: 1.02rem; }
+.nerv-arch .node-out { min-width: 360px; background: linear-gradient(180deg, rgba(0, 214, 143, 0.15), rgba(0, 214, 143, 0.04)); border-color: rgba(0, 214, 143, 0.5); }
+
+.nerv-arch-chars { gap: 0.55rem; }
+.nerv-arch-char {
+  display: flex; flex-direction: column; align-items: center; width: 118px;
+  background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(196, 22, 28, 0.4);
+  border-radius: 12px; padding: 0.7rem 0.45rem 0.6rem;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.nerv-arch-char:hover { transform: translateY(-3px); border-color: var(--nerv-crimson-bright); }
+.nerv-arch-char img { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; border: 2px solid var(--nerv-crimson); margin-bottom: 0.4rem; }
+.nerv-arch-char b { font-size: 0.82rem; line-height: 1.1; }
+.nerv-arch-char span { font-size: 0.6rem; opacity: 0.62; text-align: center; line-height: 1.2; margin-top: 0.12rem; }
+.nerv-arch-char em { font-size: 0.64rem; font-style: normal; color: var(--nerv-crimson-bright); margin-top: 0.28rem; font-weight: 600; }
+
+.nerv-arch-flow { text-align: center; color: var(--nerv-crimson); font-size: 1.15rem; margin: 0.4rem 0; line-height: 1; }
+.nerv-arch-flow span { font-size: 0.66rem; color: #a8a8b2; margin-left: 0.45rem; vertical-align: middle; }
+
+@media (max-width: 640px) {
+  .nerv-arch-char { width: 30%; min-width: 92px; }
+  .nerv-arch .node-bot, .nerv-arch .node-out { min-width: 0; width: 100%; }
+}
