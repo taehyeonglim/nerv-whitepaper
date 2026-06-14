@@ -71,10 +71,10 @@ markdown_extensions:
       permalink: true
 
 extra_css:
-  - assets/nerv.css?v=4
+  - assets/nerv.css?v=5
 
 extra_javascript:
-  - assets/mermaid-zoom.js?v=4
+  - assets/mermaid-zoom.js?v=5
 
 extra:
   social:

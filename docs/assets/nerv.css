@@ -103,8 +103,9 @@ body.nerv-mm-open { overflow: hidden; }
 }
 .nerv-mm-stage.grabbing { cursor: grabbing; }
 .nerv-mm-stage svg { display: block; }
-/* 다이어그램 위 전체화면 버튼 (호버 시 노출) */
-.nerv-mm-host { position: relative; }
+/* 다이어그램 래퍼 + 전체화면 버튼 */
+.nerv-mm-wrap { position: relative; display: block; }
+.nerv-mm-stage .nerv-mm-moved { max-width: none !important; margin: 0 !important; }
 .nerv-mm-fsbtn {
   position: absolute; top: 8px; right: 8px; z-index: 5;
   width: 36px; height: 36px; border-radius: 8px;
@@ -113,7 +114,7 @@ body.nerv-mm-open { overflow: hidden; }
   display: flex; align-items: center; justify-content: center;
   opacity: 0.9; transition: opacity 0.15s ease, background 0.15s ease;
 }
-.nerv-mm-host:hover .nerv-mm-fsbtn { opacity: 1; }
+.nerv-mm-wrap:hover .nerv-mm-fsbtn { opacity: 1; }
 .nerv-mm-fsbtn:hover { background: var(--nerv-crimson); border-color: var(--nerv-crimson-bright); }
 .nerv-mm-fsbtn:hover { background: var(--nerv-crimson); border-color: var(--nerv-crimson-bright); }
 
