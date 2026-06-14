@@ -81,5 +81,39 @@
 .badge.python { background: rgba(80,160,255,.15);  color: #6cb2ff; border: 1px solid #6cb2ff; }
 .badge.codex  { background: rgba(160,120,255,.15);  color: #b18cff; border: 1px solid #b18cff; }
 
-/* Mermaid 다이어그램 가독성 */
-.mermaid { text-align: center; }
+/* Mermaid 다이어그램 가독성 + 클릭 확대 힌트 */
+.mermaid { text-align: center; cursor: zoom-in; }
+.mermaid svg { max-width: 100%; }
+
+/* Mermaid 전체화면 뷰어 */
+body.nerv-mm-open { overflow: hidden; }
+.nerv-mm-overlay {
+  position: fixed; inset: 0; z-index: 100000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(5, 5, 8, 0.94);
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+  animation: nerv-mm-fade 0.12s ease;
+}
+@keyframes nerv-mm-fade { from { opacity: 0; } to { opacity: 1; } }
+.nerv-mm-stage {
+  width: 94vw; height: 90vh;
+  display: flex; align-items: center; justify-content: center;
+  transform-origin: center center;
+  cursor: grab; will-change: transform;
+}
+.nerv-mm-stage.grabbing { cursor: grabbing; }
+.nerv-mm-stage svg { display: block; }
+.nerv-mm-close {
+  position: fixed; top: 14px; right: 18px;
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--nerv-crimson); background: rgba(0, 0, 0, 0.55);
+  color: #fff; font-size: 18px; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.nerv-mm-close:hover { background: var(--nerv-crimson); border-color: var(--nerv-crimson-bright); }
+.nerv-mm-hint {
+  position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+  color: #e6e6e6; font-size: 0.74rem; opacity: 0.82;
+  background: rgba(0, 0, 0, 0.45); padding: 0.35rem 0.85rem; border-radius: 999px;
+  border: 1px solid rgba(196, 22, 28, 0.4); pointer-events: none; white-space: nowrap;
+}
