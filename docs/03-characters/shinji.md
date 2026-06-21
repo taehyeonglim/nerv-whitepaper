@@ -1,5 +1,8 @@
 # 신지 · Personal & Learning
 
+!!! warning "강의 도메인 종료 (2026-06-21)"
+    NERV는 2026-06-21부로 **강의 콘텐츠 제작 도메인**을 더 이상 운영하지 않는다. 신지의 강의 계열 에이전트(`lecture-content-synthesizer`, `lecture-web-researcher`, `lecture-slide-maker`, `narration-script-writer`, `lecture-content-designer`)는 정의가 보존된 채 비활성 상태로 전환됐다. 단, `imotions-expert`(연구용 생체신호·시선추적 지식)와 `image-generator`(포토카드·웹툰·카드뉴스 공용)는 강의 전용이 아니므로 계속 운영된다.
+
 <div class="nerv-char-head" markdown>
 ![신지](../assets/characters/avatars/shinji.jpg){ .avatar }
 ![신지 카드](../assets/characters/cards/shinji.png){ .card }
